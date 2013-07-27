@@ -8,6 +8,6 @@ env:
   - DJANGO=1.4.5
   - DJANGO=1.5.1
 install:
-  - pip install -q Django==$DJANGO tissue--use-mirrors
+  - pip install -q Django==$DJANGO tissue --use-mirrors
 script:
   - nosetests --with-tissue --tissue-package=template_shortcuts
