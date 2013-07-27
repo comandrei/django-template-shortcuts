@@ -8,7 +8,8 @@ env:
   - DJANGO=1.4.5
   - DJANGO=1.5.1
 before_install:
-  - if [[ $TRAVIS_PYTHON_VERSION == '2.6' ]]; then pip install unittest2; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == '2.6' ]]; then pip install --use-mirrors unittest2; fi
+  - echo $TRAVIS_PYTHON_VERSION
 install:
   - pip install -q Django==$DJANGO tissue --use-mirrors
 script:
