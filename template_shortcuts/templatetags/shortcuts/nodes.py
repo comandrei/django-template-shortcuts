@@ -1,5 +1,6 @@
 from django import template
 
+
 class CSSTag(template.Node):
 
     def __init__(self, url):
