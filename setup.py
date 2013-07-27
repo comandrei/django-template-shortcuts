@@ -5,7 +5,6 @@ setup(
     packages = find_packages(),
     author="Andrei Coman",
     author_email="comandrei@gmail.com",
-    install_requires=["django=>1.2"],
-    test_requires=["nose", "tissue", "mock"],
+    install_requires=["django>=1.2.7"],
     url="https://github.com/comandrei/django-template-shortcuts/"
 )
