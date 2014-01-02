@@ -1,8 +1,9 @@
 from django import template
-from template_shortcuts.providers import CDNJS
+
+from template_shortcuts.utils import setting, import_by_path
 from template_shortcuts.nodes import CSSTag, JSTag
 
-provider = CDNJS()
+provider = import_by_path(setting("TEMPLATE_CDN_PROVIDER"))()
 
 
 def parse_tag(parser, token):

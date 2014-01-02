@@ -6,12 +6,15 @@ from django.template import Template, Context
 
 
 SETTINGS = collections.namedtuple(
-    "Settings", ["TEMPLATE_DEBUG", "INSTALLED_APPS"])
+    "Settings", ["TEMPLATE_DEBUG", "INSTALLED_APPS",
+                 "TEMPLATE_CDN_PROVIDER"])
 
 
-settings = SETTINGS(False, ["template_shortcuts"])
+settings = SETTINGS(False, ["template_shortcuts"],
+                    "template_shortcuts.providers.google.Google")
 
 
+@mock.patch("django.conf.settings", settings)
 @mock.patch("django.template.base.settings", settings)
 def render_to_string(string, context=None):
     base_str = "{% load shortcuts %}"
