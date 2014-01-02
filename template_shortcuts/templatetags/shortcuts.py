@@ -28,7 +28,20 @@ def javascript_tag(parser, token):
     raise template.TemplateSyntaxError(
         "Unsupported library '%s'" % tag_name)
 
+
+def css_tag(parser, token):
+    tag_name, version = parse_tag(parser, token)
+    url_builder = getattr(provider, tag_name)
+    if url_builder:
+        url = url_builder(version)
+        return CSSTag(url)
+    raise template.TemplateSyntaxError(
+        "Unsupported library '%s'" % tag_name)
+
 register = template.Library()
-JS_TAGS = ["angular", "modernizr", "jquery"]
+JS_TAGS = ["angular", "chrome_frame", "dojo", "ext_core",
+           "jquery", "jquery_ui", "mootools", "modernizr",
+           "prototype", "scriptaculos", "webfont"]
+
 for tag in JS_TAGS:
     register.tag(tag, javascript_tag)
