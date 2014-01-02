@@ -1,7 +1,7 @@
 django-template-shortcuts
 =========================
 
-[![Build Status](https://travis-ci.org/comandrei/django-template-shortcuts.png)](https://travis-ci.org/comandrei/django-template-shortcuts)
+[![Build Status](https://travis-ci.org/comandrei/django-template-shortcuts.png)](https://travis-ci.org/comandrei/django-template-shortcuts) [![Latest Version](https://pypip.in/v/django-template-shortcuts/badge.png)](https://pypi.python.org/pypi/django-template-shortcuts/) [![Downloads](https://pypip.in/d/django-template-shortcuts/badge.png)](https://pypi.python.org/pypi/django-template-shortcuts/)
 
 Remove boilerplate code when including JS and CSS files hosted by popular CDNs.
 
