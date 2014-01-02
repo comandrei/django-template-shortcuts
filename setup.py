@@ -23,4 +23,5 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Utilities',
     ],
+    long_description=README
 )
