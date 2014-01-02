@@ -20,7 +20,8 @@ class Google(CDNProvider):
         return self._build_js_url("jqueryui", version, "jquery-ui")
 
     def mootools(self, version):
-        return self._build_js_url("mootools", version)
+        return self._build_js_url("mootools", version,
+                                  "mootools-yui-compressed.js")
 
     def prototype(self, version):
         return self._build_js_url("prototype", version)

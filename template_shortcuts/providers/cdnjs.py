@@ -23,4 +23,5 @@ class CDNJS(CDNProvider):
         return self._build_js_url("jqueryui", version, "jquery-ui")
 
     def mootools(self, version):
-        return self._build_js_url("jqueryui", version, "jquery-ui")
+        return self._build_js_url("mootools", version,
+                                  "mootools-core-full-compat-yc")
