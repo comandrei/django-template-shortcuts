@@ -1,11 +1,36 @@
+sudo: false
 language: python
 python:
-  - "2.7"
-env:
-  - DJANGO=1.4.15
-  - DJANGO=1.5.10
-  - DJANGO=1.6.7
+    - 2.7
+    - 3.3
+    - 3.4
+    - 3.5
+    - pypy
+
+cache:
+    pip: true
+    directories:
+        - $HOME/download-cache
+
+before_install:
+    - mkdir -p $HOME/download-cache
+
 install:
-  - pip install -q Django==$DJANGO tissue --use-mirrors
+    - pip install requests "Django${DJANGO_VERSION}"
+    - python setup.py install
+
 script:
-  - nosetests --with-tissue --tissue-package=template_shortcuts
+     - cd test_project && py.test --ds=test_project.settings
+
+env:
+    matrix:
+        - DJANGO_VERSION=">=1.7,<1.8"
+        - DJANGO_VERSION=">=1.8,<1.9"
+        - DJANGO_VERSION=">=1.9,<1.10"
+
+matrix:
+    allow_failures:
+      - python: "pypy"
+    exclude:
+       - python: 3.5
+         env: DJANGO_VERSION=">=1.7,<1.8"
