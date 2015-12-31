@@ -9,7 +9,7 @@ setup(
     packages=find_packages(),
     author="Andrei Coman",
     author_email="comandrei@gmail.com",
-    install_requires=["django>=1.3"],
+    install_requires=["django>=1.7"],
     url="https://github.com/comandrei/django-template-shortcuts/",
     license='BSD',
     classifiers=[
