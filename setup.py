@@ -5,7 +5,7 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
 setup(
     name="django-template-shortcuts",
-    version="0.2.1",
+    version="0.2.2",
     packages=find_packages(),
     author="Andrei Coman",
     author_email="comandrei@gmail.com",
