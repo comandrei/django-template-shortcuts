@@ -23,5 +23,6 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Utilities',
     ],
+    description='Reusable Django templatetags',
     long_description=README
 )
