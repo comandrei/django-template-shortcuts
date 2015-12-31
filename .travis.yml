@@ -16,7 +16,7 @@ before_install:
     - mkdir -p $HOME/download-cache
 
 install:
-    - pip install requests "Django${DJANGO_VERSION}"
+    - pip install pytest-django "Django${DJANGO_VERSION}"
     - python setup.py install
 
 script:
