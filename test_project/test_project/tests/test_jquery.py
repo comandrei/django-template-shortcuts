@@ -1,11 +1,10 @@
-import unittest
-
+from django.test import TestCase
 from django import template
 
-from template_shortcuts.tests.helpers import render_to_string
+from .helpers import render_to_string
 
 
-class JQueryTest(unittest.TestCase):
+class JQueryTest(TestCase):
 
     def test_jquery_version_required(self):
         with self.assertRaises(template.TemplateSyntaxError):
@@ -16,7 +15,7 @@ class JQueryTest(unittest.TestCase):
         self.assertIn("1.7.2/jquery.min.js", rendered)
 
 
-class AngularTestCase(unittest.TestCase):
+class AngularTestCase(TestCase):
 
     def test_angular_certain_version(self):
         rendered = render_to_string("{% angular '1.2.5' %}")
