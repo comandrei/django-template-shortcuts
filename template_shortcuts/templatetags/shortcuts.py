@@ -1,9 +1,10 @@
 from django import template
+from django.conf import settings
+from django.utils.module_loading import import_string
 
-from template_shortcuts.utils import setting, import_by_path
 from template_shortcuts.nodes import CSSTag, JSTag
 
-provider = import_by_path(setting("TEMPLATE_CDN_PROVIDER"))()
+PROVIDER = import_string(getattr(settings, "TEMPLATE_CDN_PROVIDER", None))()
 
 
 def parse_tag(parser, token):
@@ -22,7 +23,7 @@ def parse_tag(parser, token):
 
 def javascript_tag(parser, token):
     tag_name, version = parse_tag(parser, token)
-    url_builder = getattr(provider, tag_name)
+    url_builder = getattr(PROVIDER, tag_name)
     if url_builder:
         url = url_builder(version)
         return JSTag(url)
@@ -32,7 +33,7 @@ def javascript_tag(parser, token):
 
 def css_tag(parser, token):
     tag_name, version = parse_tag(parser, token)
-    url_builder = getattr(provider, tag_name)
+    url_builder = getattr(PROVIDER, tag_name)
     if url_builder:
         url = url_builder(version)
         return CSSTag(url)
