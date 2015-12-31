@@ -1,4 +1,4 @@
-from provider import CDNProvider
+from .provider import CDNProvider
 
 
 class Google(CDNProvider):
