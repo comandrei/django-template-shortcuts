@@ -13,6 +13,10 @@ django-template-shorcuts
     :target: https://pypi.python.org/pypi/django-template-shorcuts
     :alt: Downloads
 
+.. image:: https://landscape.io/github/comandrei/django-template-shortcuts/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/comandrei/django-template-shortcuts/master
+   :alt: Code Health
+
 
 Remove boilerplate code when including JS and CSS files hosted by popular CDNs.
 
